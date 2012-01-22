@@ -17,6 +17,15 @@ var typeOfUsingTheFile = "";
 
 
 
+function translateApp2()
+{
+	 $._.setLocale('en');
+
+	 $('#example1').append("<div>" + $._('Welcome')+"</div>");
+
+}
+
+
 function translateApp(trimmedBrowserLang) {
 	// TRANSLATE APP
 
@@ -27,8 +36,7 @@ function translateApp(trimmedBrowserLang) {
 		$("h1#loginHeader").text(text['hlavni_menu']);
 		$("h1#errorMessageUserEmail").text(text['chybova_zprava_uzemail']);
 		$("h1#errorMessageUserPassword").text(text['chybova_zprava_uzheslo']);
-		$("h1#errorMessageLoginFailed")
-				.text(text['chybova_zprava_loginspatne']);
+		$("h1#errorMessageLoginFailed").text(text['chybova_zprava_loginspatne']);
 
 		// USER ACCOUNT PAGE
 		$("h1#userAccountHeader").text(text['header_uzivatelsky_ucet']);
@@ -323,8 +331,10 @@ function getSettings() {
 		$("#actualLangForTranslate").text(text['jazyk_pro_preklad_nenastaven']);
 		$("#actualLangForTranslate").show('slow');
 
+		
+		$.mobile.changePage("#settingsPage", "slide", false, true);
 		console.log("jazyk pro app nenastaven");
-
+		
 	}
 
 	else {
@@ -333,7 +343,9 @@ function getSettings() {
 		$("#actualLangForTranslate").show('slow');
 		$("#" + translateLang + "").css("background-color", "red");
 
-		console.log("jazyk pro app je nastaven a jazyk zvyraznen");
+		
+		$.mobile.changePage("#settingsPage", "slide", false, true);
+		console.log("jazyk pro app je nastaven a jazyk zvyraznen");	
 	}
 
 };

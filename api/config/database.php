@@ -6,8 +6,8 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		//'port' => 8888,
-		'login' => 'live_teacher',
-		'password' => 'password',
+		'login' => 'root',
+		'password' => '',
 		'database' => 'live_teacher',
 	);
 }
